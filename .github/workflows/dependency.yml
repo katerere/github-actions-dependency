@@ -1,0 +1,26 @@
+name: Dependency workflow
+
+on: push
+
+jobs:
+  job1:
+    name: bundles the code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: run command
+        run: pwd
+  second-job:
+    runs-on: windows-latest
+    needs: [job-on-ubuntu]
+    steps:
+      - run: echo "Hello"
+
+     
+  third-job:
+     runs-on: macos-latest
+     needs: [second-job]
+     steps:
+      - run: pwd
+
+      
