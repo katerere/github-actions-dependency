@@ -3,7 +3,7 @@ name: Dependency workflow
 on: push
 
 jobs:
-  job1:
+  job-on-ubuntu:
     name: bundles the code
     runs-on: ubuntu-latest
 
@@ -15,7 +15,6 @@ jobs:
     needs: [job-on-ubuntu]
     steps:
       - run: echo "Hello"
-
      
   third-job:
      runs-on: macos-latest
